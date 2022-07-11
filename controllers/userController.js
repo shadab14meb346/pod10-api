@@ -150,18 +150,18 @@ exports.getKeywords = catchAsync(async (req, res, next) => {
 
 
 
-  // const keywordResponse = await axios.post(
-  //   "https://api.apilayer.com/keyword", tweetText, {
-  //     headers: {
-  //       'apikey': '4owm0FNKkXSjIXbNv5iGQwlyRvNLJvCw'
-  //     },
-  //   }
-  // )
+  const keywordResponse = await axios.post(
+    "https://api.apilayer.com/keyword", tweetText, {
+      headers: {
+        'apikey': 'U7jh7bCRgLBhBjrHB0xJ02XzeVcd4Q77'
+      },
+    }
+  )
 
   res.status(200).json({
     status: 'success',
     data: {
-      'tweetKeywords': tweetText,
+      'tweetKeywords': keywordResponse.data,
       'userLists': userListsText
     }
   });
